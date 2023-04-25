@@ -1,30 +1,159 @@
-const express = require("express");
-const bodyParser = require("body-parser")
-const user = require("./routes/user");
-const InitiateMongoServer = require("./config/db");
-
-// Initiate Mongo Server
-InitiateMongoServer();
-
+const axios = require('axios');
+const express = require('express');
+const port = 3000;
 const app = express();
 
-// PORT
-const PORT = process.env.PORT || 4000;
+app.use(express.json()); // Utilities for request bodies
+app.use(express.urlencoded({ extended: true })); // Utilities for query params
 
-// Middleware
-app.use(express.json());
+stupidDB = {}; // initialize our dumb database
 
-app.get("/", (req, res) => {
-  res.json({ message: "API Working" });
+// GET Requests
+
+app.get('/', (req, res) => {
+    // homepage
+    res.send('bearfit tracker');
 });
 
-// /**
-//  * Router Middleware
-//  * Router - /user/*
-//  * Method - *
-//  */
-app.use("/user", user);
+app.get('/info/budget', (req, res) => {
+    res.send({
+        "3/18": {
+            "spendings": 30
+        },
+        "3/19": {
+            "spendings": 40
+        },
+        "3/20": {
+            "spendings": 40
+        },
+        "3/21": {
+            "spendings": 60
+        },
+        "3/22": {
+            "spendings": 40
+        },
+        "3/23": {
+            "spendings": 20
+        },
+        "3/24": {
+            "spendings": 25
+        },
+        "Total": 68,
+        "Drinks/Food": 84,
+        "Entertainment": 37,
+        "Health": 21
+    })
+});
 
-app.listen(PORT, (req, res) => {
-  console.log(`Server Started at PORT ${PORT}`);
+app.get('/info/time', (req, res) => {
+    res.send({
+        "3/18": {
+            "family": 20,
+            "friends": 10,
+            "classes": 30,
+            "extracurriculars": 20,
+            "homework:": 30,
+            "exercise": 10
+        },
+        "3/19": {
+            "family": 30,
+            "friends": 30,
+            "classes": 50,
+            "extracurriculars": 20,
+            "homework:": 30,
+            "exercise": 10
+        },
+        "3/20": {
+            "family": 30,
+            "friends": 40,
+            "classes": 30,
+            "extracurriculars": 10,
+            "homework:": 30,
+            "exercise": 10
+        },
+        "3/21": {
+            "family": 30,
+            "friends": 50,
+            "classes": 20,
+            "extracurriculars": 10,
+            "homework:": 30,
+            "exercise": 10
+        },
+        "3/22": {
+            "family": 10,
+            "friends": 15,
+            "classes": 30,
+            "extracurriculars": 25,
+            "homework:": 30,
+            "exercise": 10
+        },
+        "3/23": {
+            "family": 10,
+            "friends": 10,
+            "classes": 20,
+            "extracurriculars": 40,
+            "homework:": 30,
+            "exercise": 10
+        },
+        "3/24": {
+            "family": 5,
+            "friends": 10,
+            "classes": 15,
+            "extracurriculars": 10,
+            "homework:": 20,
+            "exercise": 10
+        },
+        "remaining_friends": 32,
+        "remaining_family": 50,
+        "remaining_extracurriculars": 68,
+        "remaining_classes": 20,
+        "remaining_homework": 10,
+        "remaining_exercise": 40
+    })
+});
+
+app.get('/info/distance', (req, res) => {
+    res.send({
+        "sleep": 6.3,
+        "water": 5,
+        "working": 5920,
+        "calories": 50,
+        "height": 105,
+        "weight": 55,
+        "age": 23
+    })
+});
+
+app.get('/info/checkin', (req, res) => {
+    res.send({
+        "month": "April",
+        "year": 2023,
+        "date": "04/18/2023",
+        "current_mood": 3,
+        "4/1": 0,
+        "4/2": 1,
+        "4/3": 2,
+        "4/4": 1,
+        "4/5": 2,
+        "4/6": 3,
+        "4/7": 2,
+        "4/8": 3,
+        "4/9": 4,
+        "4/10": 3,
+        "4/11": 0,
+        "4/12": 2,
+        "4/13": 4,
+        "4/14": 2,
+        "4/15": 2,
+        "4/16": 4,
+        "4/17": 0,
+        "4/18": 1,
+        "4/19": 4
+    })
+});
+
+// Server Setup
+
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
 });
