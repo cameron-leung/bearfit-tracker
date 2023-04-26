@@ -41,7 +41,7 @@ Improve daily well-being & health. Attribute data & tangible trends to feelings 
    - Form input component
  - Contact Us component
  
- ##Routes Description
+ ## Routes Description
 - The route '/' returns a simple string response "bearfit tracker".
 - The route '/info/budget' returns a JSON object with spending information for the dates 3/18 to 3/24, along with spending totals for different categories such as Drinks/Food, Entertainment, and Health.
 - The route '/info/time' returns a JSON object with time information for the dates 3/18 to 3/24, including time spent on family, friends, classes, extracurriculars, homework, and exercise, as well as time remaining for each category.
