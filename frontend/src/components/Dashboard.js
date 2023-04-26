@@ -6,6 +6,8 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "rec
 import UserCard from './UserCard';
 import Time from './Time';
 import Budget from './Budget';
+import BudgetPieChart from './BudgetPieChart';
+
 
 const Dashboard = () => {
     return (
@@ -14,6 +16,7 @@ const Dashboard = () => {
                 <UserCard /> 
                 <Time /> 
                 <Budget />
+                <BudgetPieChart />
             </Row>
         </div>
     );
