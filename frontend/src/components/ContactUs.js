@@ -3,9 +3,11 @@ import React, { useState } from "react";
 const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitted(true)
     //backend connection
   };
 

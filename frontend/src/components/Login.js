@@ -1,13 +1,25 @@
 import React, { useState } from "react";
+import Menu from './Menu';
+import { BrowserRouter as Router, Routes, Route, Link, useParams, Navigate, useNavigate} from 'react-router-dom';
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (email == "bob@gmail.com" && password == "password123") {
+      setIsLoggedIn(true);
+    }
     // backend connections
   };
+
+  if (isLoggedIn) {
+    navigate("/dashboard");
+  }
 
   return (
     <form onSubmit={handleSubmit}>

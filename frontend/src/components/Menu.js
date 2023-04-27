@@ -10,6 +10,8 @@ import ContactUs from './ContactUs';
 import Dashboard from './Dashboard';
 import Distance from './Distance';
 import MentalCheckin from './MentalCheckin';
+import Home from './Home';
+import Login from './Login';
 
 
 const { SubMenu } = AntdMenu;
@@ -17,6 +19,8 @@ const { SubMenu } = AntdMenu;
 const Menu = () => {
 
     const routeData = [
+        { name: 'Home', route: 'home' },
+        { name: 'Login', route: 'login' },
         { name: 'Dashboard', route: 'dashboard' },
         { name: 'Time', route: 'time' },
         { name: 'Distance', route: 'distance' },
@@ -59,12 +63,15 @@ const Menu = () => {
         </AntdMenu>
         
         <Routes>
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/time' element={<Time />} />
-          <Route path='/distance' element={<Distance />} />
-          <Route path='/budget' element={<Budget />} />
-          <Route path='/mentalHealth' element={<MentalCheckin />} />
-          <Route path='/contact' element={<ContactUs />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/time' element={<Time />} />
+            <Route path='/distance' element={<Distance />} />
+            <Route path='/budget' element={<Budget />} />
+            <Route path='/mentalHealth' element={<MentalCheckin />} />
+            <Route path='/contact' element={<ContactUs />} />
           
         </Routes>
     </div>
