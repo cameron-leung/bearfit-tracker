@@ -19,8 +19,8 @@ const { SubMenu } = AntdMenu;
 const Menu = () => {
 
     const routeData = [
-        { name: 'Home', route: 'home' },
-        { name: 'Login', route: 'login' },
+        // { name: 'Home', route: 'home' },
+        // { name: 'Login', route: 'login' },
         { name: 'Dashboard', route: 'dashboard' },
         { name: 'Time', route: 'time' },
         { name: 'Distance', route: 'distance' },
@@ -36,7 +36,7 @@ const Menu = () => {
     };
 
     return (
-    <Router>
+    // <Router>
     <div className="App">
         <AntdMenu
         onClick={handleMenuClick}
@@ -63,9 +63,9 @@ const Menu = () => {
         </AntdMenu>
         
         <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/login' element={<Login />} />
+            {/* <Route path='/' element={<Home />} /> */}
+            {/* <Route path='/home' element={<Home />} /> */}
+            {/* <Route path='/login' element={<Login />} /> */}
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/time' element={<Time />} />
             <Route path='/distance' element={<Distance />} />
@@ -74,8 +74,9 @@ const Menu = () => {
             <Route path='/contact' element={<ContactUs />} />
           
         </Routes>
+        <Dashboard />
     </div>
-    </Router>
+    // </Router>
     );
 };
 

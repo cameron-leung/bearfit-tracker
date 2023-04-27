@@ -12,6 +12,7 @@ import BudgetPieChart from './BudgetPieChart';
 const Dashboard = () => {
     return (
         <div className="content-wrapper">
+            <Menu />
             <Row gutter={[16, 16]}>
                 <UserCard /> 
                 <Time /> 

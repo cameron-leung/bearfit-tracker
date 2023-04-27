@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-r
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import './Home.css';
 // import './Home.html';
+import bearImage from './bear.jpeg';
 
 
 
@@ -28,10 +29,10 @@ function Home() {
         <div className="main-left">
           <h2>Find your Best Fit with Bear Fit</h2>
           <h5>Improve your wellness and self-awareness with our online fitness tracker</h5>
-          <button>START</button>
+          <button><Link to="/menu"> START </Link></button>
         </div>
         <div className="main-right">
-          <img src="bear.jpeg" alt="Bear Image" width="70%" height="70%" />
+          <img src={bearImage} className="bear-image" alt="Bear Image" width="70%" height="70%" />
         </div>
       </main>
       <footer className="footer">
@@ -39,7 +40,7 @@ function Home() {
           <p>&copy; 2023 BearFit Tracker</p>
         </div>
         <div className="footer-right">
-          <a href="#">Contact Us</a>
+          <a href="/contact">Contact Us</a>
         </div>
       </footer>
     </div>
