@@ -18,30 +18,37 @@ app.get('/', (req, res) => {
 app.get('/info/budget', (req, res) => {
     res.send({
         "3/18": {
-            "spendings": 30
+            category: "Drinks/Food",
+            amount: 30
         },
         "3/19": {
-            "spendings": 40
+          category: "Drinks/Food",
+          amount: 40
         },
         "3/20": {
-            "spendings": 40
+          category: "Health",
+          amount: 40
         },
         "3/21": {
-            "spendings": 60
+          category: "Health",
+          amount: 60
         },
         "3/22": {
-            "spendings": 40
+          category: "Drinks/Food",
+          amount: 40
         },
         "3/23": {
-            "spendings": 20
+          category: "Health",
+          amount: 20
         },
         "3/24": {
-            "spendings": 25
-        },
-        "Total": 68,
-        "Drinks/Food": 84,
-        "Entertainment": 37,
-        "Health": 21
+          category: "Entertainment",
+          amount: 25
+        }
+        // "Total": 68,
+        // "Drinks/Food": 84,
+        // "Entertainment": 37,
+        // "Health": 21
     })
 });
 

@@ -7,6 +7,17 @@ const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884D8", "#FFC0CB"
 const BudgetPieChart = () => {
   const [data, setData] = useState([]);
 
+//   const parseData = (data) => {
+//     "Total": 68,
+//     "Drinks/Food": 84,
+//     "Entertainment": 37,
+//     "Health": 21
+
+//     const newData = []
+
+//     setData(data);
+//   }
+
   useEffect(() => {
     axios.get("http://localhost:3000/info/budget")
       .then(response => setData(response.data))
